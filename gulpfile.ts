@@ -116,7 +116,8 @@ const packagePush = async (): Promise<void> => {
 
 const packageBuild = async (): Promise<void> => {
   // Update dependencies or install it
-  await packageUpdateDependencies();
+  // await packageUpdateDependencies();
+  
   // Remove output directory
   await del(output, { force: true });
   // Compile project
