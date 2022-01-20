@@ -99,25 +99,25 @@ const packageUpdateDependencies = async (): Promise<void> => {
     } else {
       await run(`npm install`)();
     }
-  } catch (error) {}
+  } catch (error) { }
 };
 
 const packageCommit = async (): Promise<void> => {
   try {
     await run(`git commit -a -m "auto commit"`)();
-  } catch (error) {}
+  } catch (error) { }
 };
 
 const packagePush = async (): Promise<void> => {
   try {
     await run("git push --all origin")();
-  } catch (error) {}
+  } catch (error) { }
 };
 
 const packageBuild = async (): Promise<void> => {
   // Update dependencies or install it
   // await packageUpdateDependencies();
-  
+
   // Remove output directory
   await del(output, { force: true });
   // Compile project
@@ -125,6 +125,10 @@ const packageBuild = async (): Promise<void> => {
   // Copy files
   await packageCopyFiles();
 };
+
+
+
+
 
 const packageLink = async (): Promise<void> => {
   // Build package or copy files
