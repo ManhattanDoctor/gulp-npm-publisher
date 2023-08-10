@@ -115,9 +115,6 @@ const packagePush = async (): Promise<void> => {
 };
 
 const packageBuild = async (): Promise<void> => {
-  // Update dependencies or install it
-  // await packageUpdateDependencies();
-
   // Remove output directory
   await del(output, { force: true });
   // Compile project
@@ -125,10 +122,6 @@ const packageBuild = async (): Promise<void> => {
   // Copy files
   await packageCopyFiles();
 };
-
-
-
-
 
 const packageLink = async (): Promise<void> => {
   // Build package or copy files
